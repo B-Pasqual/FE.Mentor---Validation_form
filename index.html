@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Intro component with signup</title>
+  </head>
+  <body>
+    <div class="container">
+      <section class="details">
+        <h1 class="tittle">Learn to code by watching others</h1>
+        <p class="details__text">
+          See how experienced developers solve problems in real-time. Watching
+          scripted tutoriais is great, but understanding how developers think is
+          invaluable.
+        </p>
+      </section>
+      <main>
+        <div class="free__trial--container">
+          <p class="free__trial--message">
+            <b>Try it free 7 days </b>then $20/mo. thereafter
+          </p>
+        </div>
+        <div class="form__container">
+          <form id="form">
+            <div class="form__box">
+              <input class="required" type="text" placeholder="First Name" />
+              <span class="span__required"
+                >First name need atleast 3 characteres</span
+              >
+            </div>
+            <div class="form__box">
+              <input class="required" type="text" placeholder="Last Name" />
+              <span class="span__required"
+                >Last name need atleast 3 characteres
+              </span>
+            </div>
+            <div class="form__box">
+              <input class="required" type="text" placeholder="Email Address" />
+              <span class="span__required">Digite um email válido</span>
+            </div>
+            <div class="form__box">
+              <input class="required" type="password" placeholder="Password" />
+              <span class="span__required"
+                >Password need atleast 12 characteres</span
+              >
+            </div>
+            <input
+              class="submit__btn entrada"
+              type="button"
+              value="CLAIM YOUR FREE TRIAL"
+            />
+          </form>
+          <div class="terms__service">
+            By clicking the button, you are agreeing to our
+            <a href="#"> Terms and Services</a>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
