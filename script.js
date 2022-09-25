@@ -6,6 +6,8 @@ const form = document.querySelector('.form');
 const inputs = document.querySelectorAll('.required');
 const spans = document.querySelectorAll('.span__required');
 const button = document.querySelector('.submit__btn');
+const modal = document.querySelector('.registrado');
+let checkValidation = [0, 0, 0, 0];
 
 const emailRegex =
   /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -31,6 +33,7 @@ const namesValidation = () => {
       setError(i);
     } else {
       removeError(i);
+      checkValidation[i] = 1;
     }
   }
 };
@@ -40,14 +43,27 @@ let passwordCheck = function () {
     setError(3);
   } else {
     removeError(3);
+    checkValidation[3] = 1;
   }
 };
 //Email validation
 let emailValidation = () => {
   if (emailRegex.test(inputs[2].value)) {
     removeError(2);
+    checkValidation[2] = 1;
   } else {
     setError(2);
+  }
+};
+
+let checkValidationFunction = () => {
+  if (
+    checkValidation[0] == 1 &&
+    checkValidation[1] == 1 &&
+    checkValidation[2] == 1 &&
+    checkValidation[3] == 1
+  ) {
+    modal.style.display = 'block';
   }
 };
 
@@ -57,4 +73,5 @@ button.addEventListener('click', () => {
   namesValidation();
   passwordCheck();
   emailValidation();
+  checkValidationFunction();
 });
